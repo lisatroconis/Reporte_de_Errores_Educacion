@@ -8,13 +8,13 @@ Created on Wed Sep 28 11:27:54 2022
 import pandas as pd
 import numpy as np
 
-df_5w  = pd.read_excel('C:/Users/Lisa/Documents/Bases de Python/Bases Actualizables/Ciclo8/5W_Colombia_-_RMRP_2022_Consolidado OCHO_19102022.xlsx')#, sheet_name= 'Hoja')
+df_5w  = pd.read_excel('5W_Colombia_-_RMRP_2022_Consolidado OCHO_19102022.xlsx')#, sheet_name= 'Hoja')
 
-sumissiones = pd.read_excel('C:/Users/Lisa/Documents/Bases de Python/Educación/Sumisiones.xlsx', sheet_name= 'Colombia_plan 2022')
+sumissiones = pd.read_excel('Sumisiones.xlsx', sheet_name= 'Colombia_plan 2022')
 
-fts = pd.read_excel("C:/Users/Lisa/Documents/Bases de Python/Educación/FTS.xlsx", sheet_name= 'Export data',header= 2)
+fts = pd.read_excel("Educación/FTS.xlsx", sheet_name= 'Export data',header= 2)
 
-df_api_general = pd.read_excel('C:/Users/Lisa/Documents/Bases de Python/Bases Actualizables/Ciclo8/API_Consolidado_ciclo_ocho_GENERAL_ 19102022.xlsx', sheet_name= 'Sector Nacional')
+df_api_general = pd.read_excel('API_Consolidado_ciclo_ocho_GENERAL_ 19102022.xlsx', sheet_name= 'Sector Nacional')
 df_api_general = df_api_general[df_api_general['Sector'] == 'Educación']
 
 #Filtros
@@ -315,7 +315,7 @@ else:
     once['Total'] = once.sum(axis=1)
     once = once.replace(np.nan,r'')
 
-Writer= pd.ExcelWriter(f"C:/Users/Lisa/Documents/Bases de Python/Bases Actualizables/{ciclo}/errores_Educacion_{mes}.xlsx")
+Writer= pd.ExcelWriter(f"/{ciclo}/errores_Educacion_{mes}.xlsx")
 
 uno.to_excel(Writer, sheet_name='socios.xlsx')
 uno2.to_excel(Writer, sheet_name='evoluacion_pob.xlsx')
